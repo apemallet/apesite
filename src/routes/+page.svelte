@@ -1,6 +1,6 @@
 <script>
     let title = "apemallet";
-    let tagline = "we make things! ver 0.0.2";
+    let tagline = "we make things! ver 0.0.3";
   </script>
   
   <style>
