@@ -6,5 +6,10 @@ export default {
     extend: {}
   },
 
-  plugins: []
+  plugins: [],
+  
+  future: {
+    purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+  },
 };
