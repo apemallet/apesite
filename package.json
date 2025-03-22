@@ -22,6 +22,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@fontsource/libre-barcode-128-text": "^5.2.5",
 		"@tailwindcss/vite": "^4.0.14",
 		"tailwindcss": "^4.0.14"
 	}
