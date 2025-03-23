@@ -4,7 +4,7 @@
       <p>© Apemallet Limited 2025. All Rights Reserved.</p>
     </div>
     <div class="footer-section">
-      <a href="/">Home</a>
+      <a href="apemallet.com">Home</a>
     </div>
     <div class="footer-section">
       <a href="mailto:biz@apemallet.com">Email Us</a>

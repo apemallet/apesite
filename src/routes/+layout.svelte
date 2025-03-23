@@ -3,7 +3,7 @@
   import "../app.css";
   import '@fontsource/libre-barcode-128-text';
   import Footer from "$lib/components/footer.svelte";
-  import { base } from '$app/paths';
+  import { base } from '$app/paths'
 </script>
 
 <div class="app">
