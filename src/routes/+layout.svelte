@@ -6,26 +6,15 @@
   import { base } from '$app/paths'
 </script>
 
-<div class="app">
+<div class="flex flex-col min-h-[100vh]">
   <nav>
     <!-- important nav stuff here -->
   </nav>
 
-  <main>
+  <main class="flex-1">
     {@render children()}
   </main>
 
   <Footer />
 </div>
 
-<style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  main {
-    flex: 1;
-  }
-</style>
