@@ -18,12 +18,11 @@
 		"autoprefixer": "^10.4.20",
 		"gh-pages": "^6.3.0",
 		"svelte": "^5.0.0",
-		"tailwindcss": "^3.4.9",
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
 		"@fontsource/libre-barcode-128-text": "^5.2.5",
-		"@tailwindcss/vite": "^4.0.14",
-		"tailwindcss": "^4.0.14"
+		"@tailwindcss/vite": "^4.0.15",
+		"tailwindcss": "^4.0.15"
 	}
 }

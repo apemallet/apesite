@@ -1,11 +1,10 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: color(#ff7e5f);
-    overscroll-behavior: none;
-  }
+html,
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: color(#ff7e5f);
+	overscroll-behavior: none;
+}
