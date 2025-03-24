@@ -1,7 +1,6 @@
 <script>
   import AboutUs from "$lib/components/about-us.svelte";
   let title = "apemallet";
-  let tagline = "we make things! ver 0.0.3";
 
   let scrollY = 0;
 
