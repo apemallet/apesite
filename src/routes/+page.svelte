@@ -19,7 +19,7 @@
       {title}
     </div>
     <div class="nav-links" class:shifted={scrollY > 100}>
-      <div class="nav-item">about us</div>
+      <div class="nav-item"><a href="/about-us">about us</a></div>
       <div class="nav-item">our projects</div>
       <div class="nav-item">contact us</div>
     </div>
