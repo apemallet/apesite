@@ -40,7 +40,7 @@ import { base } from '$app/paths';
         class:flex-row-reverse={i % 2 === 1}
       >
         <img
-          src={base}{imgSrc}
+          src={`${base}${imgSrc}`}
           alt={name}
           class="w-[250px] h-[250px] object-cover block mx-auto rounded-full border-[3px] border-white"
         />
