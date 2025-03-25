@@ -24,8 +24,6 @@ import { base } from '$app/paths';
   };
 </script>
 
-<svelte:window on:scroll={handleScroll} />
-
 <div
   class="about-us"
 >
