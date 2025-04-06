@@ -1,5 +1,4 @@
 <script>
-	import { base } from "$app/paths";
 	import { onMount } from "svelte";
 	import KeenSlider from "keen-slider";
 	import ProductSlide from "./ProductSlide.svelte";

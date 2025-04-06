@@ -1,4 +1,5 @@
 <script>
+	import { base } from "$app/paths";
 	let { product } = $props();
 </script>
 
@@ -24,6 +25,10 @@
 		</button>
 	</div>
 	<div class="img-container self-center mx-auto">
-		<img src={product.image} alt={product.name} class="rounded-4xl size-80" />
+		<img
+			src={base + product.image}
+			alt={product.name}
+			class="rounded-4xl size-80"
+		/>
 	</div>
 </div>
