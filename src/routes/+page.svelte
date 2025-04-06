@@ -35,7 +35,7 @@
 <div
 	class="bg-linear-to-b from-sky-300 to-teal-500 font-[Poppins] text-white overflow-hidden"
 >
-	<div class="spacer min-h-10 sm:min-h-40 md:min-h-50"></div>
+	<div class="spacer min-h-25 sm:min-h-40 md:min-h-50"></div>
 	<!--  INFO: make sure padding/width of this matches the navbar -->
 	<div class="max-w-7xl mx-auto px-6 py-4 self-center">
 		<section id="display">
