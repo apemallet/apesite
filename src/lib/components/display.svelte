@@ -1,6 +1,10 @@
 <script>
     import { base } from "$app/paths";
-    let currentIndex = 0;
+    import KeenSlider from "keen-slider";
+    import { onMount } from "svelte";
+
+    let sliderRef;
+    let slider;
 
     let products = [
         {
@@ -23,52 +27,49 @@
         },
     ];
 
-    function prev() {
-        currentIndex = (currentIndex - 1 + products.length) % products.length;
-    }
+    onMount(() => {
+        slider = new KeenSlider(sliderRef, {
+            loop: true,
+            slides: {
+                perView: 1,
+                spacing: 10,
+            },
+        });
 
-    function next() {
-        currentIndex = (currentIndex + 1) % products.length;
-    }
+        return () => slider.destroy();
+    });
 </script>
 
-<div class="display py-25">
-    <div class="grid grid-cols-[1fr_12fr_1fr] items-center gap-15">
-        <button
-            on:click={prev}
-            class="group bg-white p-5 text-black hover:opacity-50 ease-in transition-all cursor-pointer"
-        >
-            <span
-                class="inline-block transition-transform ease-in group-hover:scale-150 group-active:scale-100"
+<div class="w-full">
+    <div bind:this={sliderRef} class="keen-slider">
+        {#each products as prod}
+            <div
+                class="keen-slider__slide grid sm:grid-cols-[2fr_1fr] grid-cols-1 items-center sm:px-90 py-50"
             >
-                ◄
-            </span>
-        </button>
-        <div class="grid sm:grid-cols-2 grid-cols-1 w-full items-center">
-            <div class="text-container sm:px-15 py-15">
-                <h1 class="text-6xl font-bold">
-                    {products[currentIndex].name}
-                </h1>
-                <p class="text-xl text-gray-100 font-bold py-5">{products[currentIndex].description}</p>
-                <button class="group bg-white rounded-full p-5 hover:bg-black transition-all ease-in cursor-pointer">
-                    <span class="text-black group-hover:text-white ease-in transition-all">Learn more</span>
-                </button>
+                <div class="text-container sm:px-15 px-5 py-15">
+                    <h1 class="text-6xl font-bold">
+                        {prod.name}
+                    </h1>
+                    <p class="text-xl text-gray-100 font-bold py-5">
+                        {prod.description}
+                    </p>
+                    <button
+                        class="group bg-white rounded-full p-5 hover:bg-black transition-all ease-in cursor-pointer"
+                    >
+                        <span
+                            class="text-black group-hover:text-white ease-in transition-all"
+                            >Learn more</span
+                        >
+                    </button>
+                </div>
+                <div class="img-container flex justify-center items-center">
+                    <img
+                        src={base + prod.image}
+                        alt={prod.name}
+                        class="rounded-4xl size-80"
+                    />
+                </div>
             </div>
-            <img
-                src={base + products[currentIndex].image}
-                alt={products[currentIndex].name}
-                class="rounded-4xl"
-            />
-        </div>
-        <button
-            on:click={next}
-            class="group bg-white p-5 text-black hover:opacity-50 ease-in transition-all cursor-pointer"
-        >
-            <span
-                class="inline-block transition-transform ease-in group-hover:scale-150 group-active:scale-100"
-            >
-                ►
-            </span>
-        </button>
+        {/each}
     </div>
 </div>
