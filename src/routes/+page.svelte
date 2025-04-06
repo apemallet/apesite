@@ -20,17 +20,17 @@
     <div class="text-4xl font-bold text-white">{title}</div>
     <ul class="flex space-x-6">
       <li>
-        <a href="#display" class="font-bold text-white hover:text-gray-200"
+        <a href="#display" class="font-bold text-white text-xl hover:text-gray-200"
           >Home</a
         >
       </li>
       <li>
-        <a href="#about-us" class="font-bold text-white hover:text-gray-200"
+        <a href="#about-us" class="font-bold text-white text-xl hover:text-gray-200"
           >About</a
         >
       </li>
       <li>
-        <a href="#contact" class="font-bold text-white hover:text-gray-200"
+        <a href="#contact" class="font-bold text-white text-xl hover:text-gray-200"
           >Contact</a
         >
       </li>
