@@ -25,7 +25,7 @@
   };
 </script>
 
-<div class="about-us">
+<div class="about-us bg-white" >
   <div class="grid grid-cols-1 gap-4 items-center">
     <div class="text-6xl text-center pt-40">about us</div>
     <div class="text-xl text-center pb-20">what makes us so successful</div>
