@@ -37,7 +37,7 @@
 
 <h1 class="text-4xl font-semibold text-center text-gray-700">Products</h1>
 
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-5 gap-y-15 pt-15 max-w-7xl">
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-5 gap-y-15 pt-15 max-w-7xl px-5 sm:px-0">
     {#each products as product}
         <div class="grid grid-cols-1 gap-y-2 justify-items-center">
             <image

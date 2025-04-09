@@ -12,7 +12,7 @@
 	<div
 		class="text-container px-10 sm:items-start flex flex-col gap-2 sm:gap-4"
 	>
-		<h1 class="text-6xl font-bold">{product.name}</h1>
+		<h1 class="text-6xl font-bold text-center sm:text-left">{product.name}</h1>
 		<p class="text-xl text-gray-100 font-semibold text-center sm:text-left">
 			{product.description}
 		</p>
