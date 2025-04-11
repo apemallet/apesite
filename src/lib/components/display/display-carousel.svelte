@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from "svelte";
 	import KeenSlider from "keen-slider";
-	import ProductSlide from "./ProductSlide.svelte";
+	import ProductSlide from "./display-slide.svelte";
 
 	let sliderRef;
 	let slider;
@@ -17,26 +17,7 @@
 			: [],
 	);
 
-	let products = [
-		{
-			name: "Long",
-			image: "/long_icon.webp",
-			description:
-				"A free universal remote app with slick animations and custom theming",
-		},
-		{
-			name: "Product 2",
-			image: "/favicon.png",
-			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-		{
-			name: "Product 3",
-			image: "/favicon.png",
-			description:
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-		},
-	];
+	let { products } = $props();
 
 	onMount(() => {
 		slider = new KeenSlider(sliderRef, {
@@ -98,7 +79,7 @@
 			onclick={prev}
 			onkeydown={(e) => handleKeydown(e, prev)}
 			aria-label="Previous slide"
-			class="absolute top-1/1 left-4/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
+			class="absolute top-1/1 left-4/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible cursor-pointer"
 		>
 			<svg
 				class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out"
@@ -117,7 +98,7 @@
 			onclick={next}
 			onkeydown={(e) => handleKeydown(e, next)}
 			aria-label="Next slide"
-			class="absolute top-1/1 left-5/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
+			class="absolute top-1/1 left-5/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible cursor-pointer"
 		>
 			<svg
 				class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out"
