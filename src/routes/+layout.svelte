@@ -14,9 +14,9 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<div class="flex flex-col min-h-[100vh] z-10">
+<div class="flex flex-col min-h-[100vh]">
   <nav
-    class={`fixed top-0 left-0 w-full transition-all ease-out 
+    class={`fixed z-10 top-0 left-0 w-full transition-all ease-out 
   ${scrollY > 50 ? "bg-black shadow-md py-1" : "bg-transparent py-4"}`}
   >
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
