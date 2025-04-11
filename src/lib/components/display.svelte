@@ -83,7 +83,7 @@
 		<ProductSlide product={products[0]} />
 	{/if}
 
-	<div bind:this={sliderRef} class="keen-slider overflow-visible pb-15">
+	<div bind:this={sliderRef} class="keen-slider overflow-visible! pb-15">
 		{#each products as product}
 			<div class="keen-slider__slide opacity-0">
 				<ProductSlide {product} />

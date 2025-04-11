@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="grid sm:grid-cols-[2fr_1fr] grid-cols-1 items-center gap-4 sm:gap-10 px-4 justify-items-center"
+	class="grid sm:grid-cols-[2fr_1fr] grid-cols-1 items-center gap-10 sm:gap-10 px-4 "
 >
 	<!-- Not sure if im missing anything or if you had plans to do implement
 		them but im p sure text-container and image-container do nothing here. 

@@ -36,10 +36,10 @@
 	</div>
 </nav>
 
-<div class="font-poppins text-gray-100">
+<div class="font-poppins text-gray-100 overflow-hidden">
 	<!--  INFO: make sure padding/width of this matches the navbar -->
 	<div class="bg-linear-to-tl from-sky-400 to-purple-600">
-		<div class="max-w-7xl mx-auto self-center">
+		<div class="max-w-7xl mx-auto px-6 py-4 self-center">
 			<section id="display">
 				<div class="spacer min-h-25 sm:min-h-30 md:min-h-45"></div>
 				<Display />
