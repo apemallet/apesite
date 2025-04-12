@@ -43,7 +43,7 @@
             <image
                 src={base + product.image}
                 alt={product.name}
-                class="rounded-4xl size-40 cursor-pointer transition-all ease-in-out hover:scale-105"
+                class="rounded-4xl size-40 cursor-pointer transition-all ease-in-out hover:scale-105 active:scale-90"
             />
             <h1 class="font-semibold text-2xl text-center text-gray-700">{product.name}</h1>
             <p class="font-normal text-center text-gray-600">{product.description}</p>
