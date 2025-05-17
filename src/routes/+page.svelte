@@ -1,10 +1,9 @@
 <script>
-  import AboutUs from "$lib/components/about-us.svelte";
-  import Display from "$lib/components/display.svelte";
-  import Products from "$lib/components/products.svelte";
-	import Navbar from "$lib/components/Navbar.svelte"
+  import AboutUs from "$lib/components/sections/about_us.svelte";
+  import Display from "$lib/components/sections/product_display.svelte";
+  import Products from "$lib/components/sections/products.svelte";
+	import Navbar from "$lib/components/navbar.svelte"
 
-  import { loadSlim } from "tsparticles-slim";
   import { onMount } from "svelte";
 
   let scrollY = $state(0);
