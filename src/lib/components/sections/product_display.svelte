@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import KeenSlider from "keen-slider";
-  import ProductSlide from "./ProductSlide.svelte";
+  import ProductSlide from "../product_slide.svelte";
 
   let sliderRef;
   let slider;
@@ -130,3 +130,4 @@
     </button>
   {/if}
 </div>
+
