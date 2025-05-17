@@ -2,11 +2,10 @@
   import AboutUs from "$lib/components/about-us.svelte";
   import Display from "$lib/components/display.svelte";
   import Products from "$lib/components/products.svelte";
+	import Navbar from "$lib/components/Navbar.svelte"
 
   import { loadSlim } from "tsparticles-slim";
   import { onMount } from "svelte";
-
-  let title = "apemallet";
 
   let scrollY = $state(0);
 
@@ -17,44 +16,7 @@
 
 <svelte:window on:scroll={handleScroll} />
 
-<nav
-  class={`fixed z-10 top-0 left-0 w-full transition-all ease-out
-  ${scrollY > 50 ? "bg-[#d6ad3b] shadow-md py-1 text-[#25373a] " : "bg-transparent py-4 text-white"}`}
->
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-4xl font-[Baloo]">{title}</div>
-    <ul class="flex font-poppins font-bold space-x-6 text-l">
-      <li>
-        <a
-          href="#display"
-          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
-          >HOME</a
-        >
-      </li>
-      <li>
-        <a
-          href="#products"
-          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
-          >PRODUCTS</a
-        >
-      </li>
-      <li>
-        <a
-          href="#about-us"
-          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
-          >ABOUT</a
-        >
-      </li>
-      <li>
-        <a
-          href="#contact"
-          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
-          >CONTACT</a
-        >
-      </li>
-    </ul>
-  </div>
-</nav>
+<Navbar {scrollY} />
 
 <div class="font-poppins text-gray-100 overflow-hidden">
   <!--  INFO: make sure padding/width of this matches the navbar -->
