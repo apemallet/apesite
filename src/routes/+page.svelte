@@ -1,54 +1,68 @@
 <script>
   import AboutUs from "$lib/components/about-us.svelte";
-  import Display from "$lib/components/display/display-carousel.svelte";
+  import Display from "$lib/components/display.svelte";
   import Products from "$lib/components/products.svelte";
 
-  let products = [
-    {
-      name: "Long",
-      image: "images/long/long_icon.webp",
-      description:
-        "A free universal remote app with slick animations, custom theming, and seamless control across all your devices. Enjoy a smooth and intuitive user experience.",
-      page: "long",
-    },
-    {
-      name: "Product 2",
-      image: "images/smileMock.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      page: "long",
-    },
-    {
-      name: "Product 3",
-      image: "images/smileMock.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      page: "long",
-    },
-    {
-      name: "Product 4",
-      image: "images/smileMock.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      page: "long",
-    },
-    {
-      name: "Monkey OG",
-      image: "images/favicon.png",
-      description:
-        "ay bru. jeez og monkey? wtf(reak)?? what. bro eats wifi, speaks in glitch, perchance. 0 chill. 100% banana-coded. tap him wrong and he crash ur fridge.",
-      page: "long",
-    },
-  ];
+  import { loadSlim } from "tsparticles-slim";
+  import { onMount } from "svelte";
+
+  let title = "apemallet";
+
+  let scrollY = $state(0);
+
+  function handleScroll() {
+    scrollY = window.scrollY;
+  }
 </script>
+
+<svelte:window on:scroll={handleScroll} />
+
+<nav
+  class={`fixed z-10 top-0 left-0 w-full transition-all ease-out 
+  ${scrollY > 50 ? "bg-[#d6ad3b] shadow-md py-1 text-[#25373a] " : "bg-transparent py-4 text-white"}`}
+>
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <div class="text-4xl font-[Baloo]">{title}</div>
+    <ul class="flex font-poppins font-bold space-x-6 text-l">
+      <li>
+        <a
+          href="#display"
+          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
+          >HOME</a
+        >
+      </li>
+      <li>
+        <a
+          href="#products"
+          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
+          >PRODUCTS</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about-us"
+          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
+          >ABOUT</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-gray-200"}`}
+          >CONTACT</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
 
 <div class="font-poppins text-gray-100 overflow-hidden">
   <!--  INFO: make sure padding/width of this matches the navbar -->
-  <div class="bg-linear-to-tl from-sky-400 to-purple-600">
+  <div class="bg-linear-to-tl from-[#182325] to-[#203535]">
     <div class="max-w-7xl mx-auto px-6 py-4 self-center">
       <section id="display">
         <div class="spacer min-h-25 sm:min-h-30 md:min-h-45"></div>
-        <Display {products} />
+        <Display />
         <div class="spacer min-h-15 sm:min-h-20 md:min-h-30"></div>
       </section>
     </div>
@@ -58,7 +72,8 @@
   >
     <section id="products">
       <div class="spacer min-h-15 sm:min-h-20 md:min-h-30"></div>
-      <Products {products} />
+
+      <Products />
       <div class="spacer min-h-15 sm:min-h-20 md:min-h-30"></div>
     </section>
   </div>
