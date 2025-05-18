@@ -1,5 +1,6 @@
 <script lang="ts">
 	let { scrollY } : { scrollY: number } = $props();
+  import { base } from "$app/paths";
 	const title = "apemallet";
 </script>
 
@@ -12,28 +13,28 @@
     <ul class="flex font-poppins font-bold space-x-6 text-l">
       <li>
         <a
-          href="/#display"
+          href="{base}/#display"
           class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-yellow-300"}`}
           >HOME</a
         >
       </li>
       <li>
         <a
-          href="/#products"
+          href="{base}/#products"
           class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-yellow-300"}`}
           >PRODUCTS</a
         >
       </li>
       <li>
         <a
-          href="/#about-us"
+          href="{base}/#about-us"
           class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-yellow-300"}`}
           >ABOUT</a
         >
       </li>
       <li>
         <a
-          href="/#contact"
+          href="{base}/#contact"
           class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-yellow-300"}`}
           >CONTACT</a
         >
