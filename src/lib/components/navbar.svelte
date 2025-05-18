@@ -1,6 +1,8 @@
 <script lang="ts">
-	let { scrollY } : { scrollY: number } = $props();
   import { base } from "$app/paths";
+  import Icon from "$assets/logo.svelte";
+
+	let { scrollY } : { scrollY: number } = $props();
 	const title = "apemallet";
 </script>
 
@@ -9,7 +11,14 @@
   ${scrollY > 50 ? "bg-yellow-400 text-slate-800 shadow-md py-1 " : "bg-transparent py-4 text-yellow-400"}`}
 >
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div class="text-4xl font-[Baloo]">{title}</div>
+    <span class="flex justify-center align-center gap-3">
+      <div class="w-20">
+        <Icon gray={scrollY > 50}/>
+      </div>
+      <div class="grid place-items-center">
+        <div class="text-4xl font-[Baloo] text-center">{title}</div>
+      </div>
+    </span>
     <ul class="flex font-poppins font-bold space-x-6 text-l">
       <li>
         <a
