@@ -7,7 +7,6 @@
 </script>
 
 <div class="font-poppins text-gray-100 overflow-hidden">
-
 	<!-- INFO: main "APEMALLET" section -->
 	<div class="relative bg-gradient-to-tl from-apeium-950 via-apeium-900 to-apeium-800">
 		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-10 brightness-100 contrast-150"></div>
@@ -25,24 +24,26 @@
 				<Display />
 			</section>
 		</div>
+		<Divider />
 	</div>
 
-
+	<!-- INFO: product overview -->
   <div
-    class="mx-auto py-4 bg-gray-100 flex self-center justify-center text-black"
+    class="mx-auto py-4 flex self-center justify-center"
   >
-		<Divider />
     <section id="products">
 			<Products />
     </section>
   </div>
 
+	<!-- INFO: about -->
   <div class="mx-auto py-4 self-center bg-gray-100 flex justify-center">
     <section id="about-us">
 			<AboutUs />
     </section>
   </div>
 
+	<!-- INFO: contact -->
   <section id="contact">
     <div class="spacer min-h-lvh"></div>
   </section>
