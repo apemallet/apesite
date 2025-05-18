@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import KeenSlider from "keen-slider";
-  import ProductSlide from "../product_slide.svelte";
+  import ProductSlide from "./product_slide.svelte";
 
   let sliderRef;
   let slider;
@@ -93,7 +93,6 @@
 
   <!-- Navigation Arrows -->
   {#if sliderLoaded}
-    <!-- Left Arrow -->
     <button
       onclick={prev}
       onkeydown={(e) => handleKeydown(e, prev)}
@@ -111,8 +110,6 @@
         />
       </svg>
     </button>
-
-    <!-- Right Arrow -->
     <button
       onclick={next}
       onkeydown={(e) => handleKeydown(e, next)}

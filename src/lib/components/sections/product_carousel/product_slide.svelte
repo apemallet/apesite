@@ -6,10 +6,7 @@
 <div
   class="grid sm:grid-cols-[2fr_1fr] grid-cols-1 items-center gap-10 sm:gap-10 px-4"
 >
-  <!-- Not sure if im missing anything or if you had plans to do implement
-		them but im p sure text-container and image-container do nothing here. 
-		Same case as with the text-container in about-us.svelte -->
-  <div class="text-container px-10 sm:items-start flex flex-col gap-2 sm:gap-4">
+  <div class="px-10 sm:items-start flex flex-col gap-2 sm:gap-4">
     <h1 class="text-6xl font-bold text-center sm:text-left">{product.name}</h1>
     <p class="text-xl text-gray-100 font-semibold text-center sm:text-left">
       {product.description}
