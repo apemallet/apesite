@@ -2,14 +2,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-apecent-50: oklch(0.987 0.026 102.212);  --color-apecent-100: oklch(0.973 0.071 103.193);  --color-apecent-200: oklch(0.945 0.129 101.54);  --color-apecent-300: oklch(0.905 0.182 98.111);  --color-apecent-400: oklch(0.852 0.199 91.936);  --color-apecent-500: oklch(0.795 0.184 86.047);  --color-apecent-600: oklch(0.681 0.162 75.834);  --color-apecent-700: oklch(0.554 0.135 66.442);  --color-apecent-800: oklch(0.476 0.114 61.907);  --color-apecent-900: oklch(0.421 0.095 57.708);  --color-apecent-950: oklch(0.286 0.066 53.813);
+	--color-apecent-surface: oklch(0.852 0.199 91.936);
 
-  --color-apeium-50: oklch(0.984 0.003 247.858);  --color-apeium-100: oklch(0.968 0.007 247.896);  --color-apeium-200: oklch(0.929 0.013 255.508);  --color-apeium-300: oklch(0.869 0.022 252.894);  --color-apeium-400: oklch(0.704 0.04 256.788);  --color-apeium-500: oklch(0.554 0.046 257.417);  --color-apeium-600: oklch(0.446 0.043 257.281);  --color-apeium-700: oklch(0.372 0.044 257.287);  --color-apeium-800: oklch(0.279 0.041 260.031);  --color-apeium-900: oklch(0.208 0.042 265.755);  --color-apeium-950: oklch(0.129 0.042 264.695);
+	/*  --color-apecent-50: oklch(0.987 0.026 102.212); */
+	/* --color-apecent-100: oklch(0.973 0.071 103.193); */
+	/* --color-apecent-200: oklch(0.945 0.129 101.54); */
+	/* --color-apecent-300: oklch(0.905 0.182 98.111); */
+	/* --color-apecent-500: oklch(0.795 0.184 86.047); */
+	/* --color-apecent-600: oklch(0.681 0.162 75.834); */
+	/* --color-apecent-700: oklch(0.554 0.135 66.442); */
+	/* --color-apecent-800: oklch(0.476 0.114 61.907); */
+	/* --color-apecent-900: oklch(0.421 0.095 57.708); */
+	/* --color-apecent-950: oklch(0.286 0.066 53.813); */
+
+	--color-apeium-surface: oklch(0.129 0.042 264.695);
+
+  --color-apeium-50: oklch(0.984 0.003 247.858);  --color-apeium-100: oklch(0.968 0.007 247.896);  --color-apeium-200: oklch(0.929 0.013 255.508);  --color-apeium-300: oklch(0.869 0.022 252.894);  --color-apeium-400: oklch(0.704 0.04 256.788);  --color-apeium-500: oklch(0.554 0.046 257.417);  --color-apeium-600: oklch(0.446 0.043 257.281);  --color-apeium-700: oklch(0.372 0.044 257.287);  --color-apeium-800: oklch(0.279 0.041 260.031);  --color-apeium-900: oklch(0.208 0.042 265.755);
 }
 
 html,
 body {
-	background: #000000;
+	@apply bg-apeium-surface;
 }
 
 @font-face {

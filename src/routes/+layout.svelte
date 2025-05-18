@@ -5,7 +5,7 @@
 
   import Footer from "$lib/components/footer.svelte";
 	import Navbar from "$lib/components/navbar.svelte"
-    import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
   let { children } = $props();
   let scrollY = $state(0);

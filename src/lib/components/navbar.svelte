@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import Icon from "$assets/logo.svelte";
 
 	let { scrollY } : { scrollY: number } = $props();
@@ -7,9 +6,9 @@
 
   let menuOpen = $state(false);
 
-  function clickOutside(node) {
-    const handleClick = (event) => {
-      if (!node.contains(event.target)) {
+  function clickOutside(node: HTMLElement) {
+    const handleClick = (event : MouseEvent) => {
+      if (!node.contains(event.target as Node)) {
         menuOpen = false;
       }
     };
@@ -34,8 +33,8 @@
 <nav
   class={`fixed z-10 top-0 left-0 w-full
     ${scrollY > 50
-      ? "bg-[#d6ad3b] text-[#25373a] shadow-md sm:transition-all sm:ease-out sm:py-1"
-      : "bg-[#d6ad3b] text-[#25373a] sm:bg-transparent sm:py-4 sm:text-[#d6ad3b] sm:transition-all sm:ease-out"
+      ? "bg-apecent-surface text-[#25373a] shadow-md sm:transition-all sm:ease-out sm:py-1"
+      : "bg-apecent-surface text-[#25373a] sm:bg-transparent sm:py-4 sm:text-apecent-surface sm:transition-all sm:ease-out"
     }`}
 >
   <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
@@ -69,7 +68,7 @@
         </button>
 
         {#if menuOpen}
-          <ul class="fixed top-20 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
+          <ul class="fixed top-20 left-0 w-screen bg-apecent-surface text-[#25373a] z-50 overflow-auto p-6 space-y-4">
             {#each pages as page}
               <li class="border-b last:border-none">
                 <a href={page.href} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
