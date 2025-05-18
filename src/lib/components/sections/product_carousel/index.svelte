@@ -1,12 +1,12 @@
 <script>
-	import { fade } from "svelte/transition";
+  import { slide, fade } from "svelte/transition";
   import { onMount } from "svelte";
 
   import KeenSlider from "keen-slider";
   import ProductSlide from "./product_slide.svelte";
 	import AllProducts from "./all_products.svelte";
-    import HangRibbon from "$lib/components/hangRibbon.svelte";
-    import Divider from "$lib/components/divider.svelte";
+  import HangRibbon from "$lib/components/hangRibbon.svelte";
+  import Divider from "$lib/components/divider.svelte";
 
   let sliderRef;
   let slider;
@@ -81,11 +81,11 @@
     if (slider) slider.moveToIdx(idx);
   }
 
-	let showAllProducts = $state(false);
+  let showAllProducts = $state(false);
 
-	function toggleAllProducts() {
-		showAllProducts = !showAllProducts;
-	}
+  function toggleAllProducts() {
+    showAllProducts = !showAllProducts;
+  }
 </script>
 
 <div class="max-w-7xl mx-auto py-24 self-center">

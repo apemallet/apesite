@@ -1,13 +1,35 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Icon from "$assets/logo.svelte";
+  import { slide, fade } from "svelte/transition";
 
-	let { scrollY } : { scrollY: number } = $props();
-	const title = "apemallet";
+  let { scrollY }: { scrollY: number } = $props();
+  const title = "apemallet";
 
   let menuOpen = $state(false);
+	let navBarElement: HTMLElement;
+	let navBarHeight = $state(0);
+
+  let pages = [
+    { name: "HOME", href: "home" },
+    { name: "PRODUCTS", href: "products" },
+    { name: "ABOUT", href: "about-us" },
+    { name: "CONTACT US", href: "contact" },
+  ];
+
+  onMount(() => {
+    navBarHeight = navBarElement.offsetHeight;
+
+    const resizeObserver = new ResizeObserver(() => {
+      navBarHeight = navBarElement.offsetHeight;
+    });
+
+    resizeObserver.observe(navBarElement);
+    return () => resizeObserver.disconnect();
+  });
 
   function clickOutside(node: HTMLElement) {
-    const handleClick = (event : MouseEvent) => {
+    const handleClick = (event: MouseEvent) => {
       if (!node.contains(event.target as Node)) {
         menuOpen = false;
       }
@@ -22,25 +44,30 @@
     };
   }
 
-  let pages = [
-    { name: "HOME", href: "#products" },
-    { name: "PRODUCTS", href: "#products" },
-    { name: "ABOUT", href: "#about-us" },
-    { name: "CONTACT US", href: "#contact" },
-  ];
+	function scrollToSection(id) {
+		const element = document.getElementById(id);
+		if (element) {
+			const y = element.getBoundingClientRect().top + window.scrollY - navBarHeight;
+			console.log(`top: ${y}`);
+			console.log(`NAVBAR HEIHGT: ${navBarHeight}`)
+			window.scrollTo({top: y, behavior: 'smooth'});
+		}
+	}
 </script>
 
 <nav
+  bind:this={navBarElement}
   class={`fixed z-10 top-0 left-0 w-full
-    ${scrollY > 50
-      ? "bg-apecent-surface text-apeium-surfacetintier shadow-md sm:transition-all sm:ease-out sm:py-1"
-      : "bg-apecent-surface text-apeium-surfacetintier sm:bg-transparent sm:py-4 sm:text-apecent-surface sm:transition-all sm:ease-out"
+    ${
+      scrollY > 50
+        ? "bg-apecent-surface text-apeium-surfacetintier shadow-md sm:transition-all sm:ease-out sm:py-1"
+        : "bg-apecent-surface text-apeium-surfacetintier sm:bg-transparent sm:py-4 sm:text-apecent-surface sm:transition-all sm:ease-out"
     }`}
 >
   <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
     <span class="flex justify-center align-center gap-3">
       <div class="w-16">
-        <Icon gray={scrollY > 50}/>
+        <Icon gray={scrollY > 50} />
       </div>
       <div class="grid place-items-center">
         <div class="text-4xl font-[Baloo] text-center">{title}</div>
@@ -49,7 +76,7 @@
     <ul class="flex font-poppins font-bold space-x-6 text-l">
       <li class="block sm:hidden relative" use:clickOutside>
         <button
-          onclick={() => menuOpen = !menuOpen}
+          onclick={() => (menuOpen = !menuOpen)}
           aria-label="Menu"
           class={`text-[#25373a] hover:text-[#445f63] cursor-pointer`}
         >
@@ -68,25 +95,28 @@
         </button>
 
         {#if menuOpen}
-          <ul class="fixed top-20 left-0 w-screen bg-apecent-surface text-apeium-surface z-50 overflow-auto p-6 space-y-4">
+          <ul
+            class="fixed top-20 left-0 w-screen bg-apecent-surface text-apeium-surface z-50 overflow-auto p-6 space-y-4"
+            transition:slide
+          >
             {#each pages as page}
               <li class="border-b last:border-none">
-                <a href={page.href} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
+                <button onclick={() => scrollToSection(page.href)} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
                   {page.name}
-                </a>
+                </button>
               </li>
             {/each}
           </ul>
         {/if}
       </li>
       {#each pages as page}
-      <li class="hidden sm:block">
-        <a
-          href={page.href}
-          class={`${scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}`}
-          >{page.name}</a
-        >
-      </li>
+				<li class="hidden sm:block">
+					<button onclick={() => scrollToSection(page.href)}
+						href={page.href}
+						class={`${scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}`}
+						>{page.name}
+					</button>
+				</li>
       {/each}
     </ul>
   </div>
