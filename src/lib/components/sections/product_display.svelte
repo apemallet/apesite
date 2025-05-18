@@ -93,7 +93,6 @@
 
   <!-- Navigation Arrows -->
   {#if sliderLoaded}
-    <!-- Left Arrow -->
     <button
       onclick={prev}
       onkeydown={(e) => handleKeydown(e, prev)}
@@ -111,8 +110,6 @@
         />
       </svg>
     </button>
-
-    <!-- Right Arrow -->
     <button
       onclick={next}
       onkeydown={(e) => handleKeydown(e, next)}
