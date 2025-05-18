@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import Icon from "$assets/logo.svelte";
 
 	let { scrollY } : { scrollY: number } = $props();
@@ -7,9 +6,9 @@
 
   let menuOpen = $state(false);
 
-  function clickOutside(node) {
-    const handleClick = (event) => {
-      if (!node.contains(event.target)) {
+  function clickOutside(node: HTMLElement) {
+    const handleClick = (event : MouseEvent) => {
+      if (!node.contains(event.target as Node)) {
         menuOpen = false;
       }
     };
