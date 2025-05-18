@@ -69,7 +69,7 @@
         </button>
       
         {#if menuOpen}
-          <ul class="fixed top-28 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
+          <ul class="fixed top-20 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
             {#each pages as page}
               <li class="border-b last:border-none">
                 <a href={page.href} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
