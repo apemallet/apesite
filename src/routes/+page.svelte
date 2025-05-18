@@ -17,9 +17,10 @@
 	</div>
 
 	<!-- INFO: product carousel -->
-	<div class="bg-apeium-900">
+	<div class="relative bg-apeium-950">
+		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-20 brightness-50 contrast-150"></div>
 		<Divider />
-		<div class="max-w-7xl mx-auto px-6 py-4 self-center">
+		<div class="max-w-7xl mx-auto py-24 self-center">
 			<section id="display">
 				<Display />
 			</section>
