@@ -38,9 +38,9 @@
       : "bg-[#d6ad3b] text-[#25373a] sm:bg-transparent sm:py-4 sm:text-[#d6ad3b] sm:transition-all sm:ease-out"
     }`}
 >
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
     <span class="flex justify-center align-center gap-3">
-      <div class="w-20">
+      <div class="w-16">
         <Icon gray={scrollY > 50}/>
       </div>
       <div class="grid place-items-center">
