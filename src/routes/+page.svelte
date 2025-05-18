@@ -1,6 +1,7 @@
 <script>
   import Display from "$lib/components/sections/product_carousel/index.svelte";
   import AboutUs from "$lib/components/sections/about_us.svelte";
+  import Founders from "$lib/components/sections/founders.svelte";
   import Main from "$lib/components/sections/main.svelte";
 	import Divider from "$lib/components/divider.svelte";
 </script>
@@ -35,8 +36,8 @@
 		</div>
 	</div>
 
-	<!-- INFO: contact -->
-  <section id="contact">
-    <div class="spacer min-h-lvh"></div>
+	<!-- INFO: founders -->
+  <section id="founders">
+    <Founders/>
   </section>
 </div>
