@@ -1,7 +1,7 @@
 <script>
   import AboutUs from "$lib/components/sections/about_us.svelte";
-  import Display from "$lib/components/sections/product_display.svelte";
-  import Products from "$lib/components/products.svelte";
+  import Display from "$lib/components/sections/product_display/index.svelte";
+  import Products from "$lib/components/sections/products.svelte";
 </script>
 
 <div class="font-poppins text-gray-100 overflow-hidden">
