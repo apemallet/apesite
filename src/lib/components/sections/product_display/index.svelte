@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import KeenSlider from "keen-slider";
-  import ProductSlide from "../product_slide.svelte";
+  import ProductSlide from "./product_slide.svelte";
 
   let sliderRef;
   let slider;
