@@ -9,7 +9,7 @@
 
 html,
 body {
-	background: #000000;
+	@apply bg-apeium-950;
 }
 
 @font-face {
