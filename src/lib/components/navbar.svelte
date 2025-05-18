@@ -33,8 +33,8 @@
 <nav
   class={`fixed z-10 top-0 left-0 w-full
     ${scrollY > 50
-      ? "bg-apecent-surface text-[#25373a] shadow-md sm:transition-all sm:ease-out sm:py-1"
-      : "bg-apecent-surface text-[#25373a] sm:bg-transparent sm:py-4 sm:text-apecent-surface sm:transition-all sm:ease-out"
+      ? "bg-apecent-surface text-apeium-surfacetintier shadow-md sm:transition-all sm:ease-out sm:py-1"
+      : "bg-apecent-surface text-apeium-surfacetintier sm:bg-transparent sm:py-4 sm:text-apecent-surface sm:transition-all sm:ease-out"
     }`}
 >
   <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
@@ -83,7 +83,7 @@
       <li class="hidden sm:block">
         <a
           href={page.href}
-          class={`${scrollY > 50 ? "hover:text-[#445f63]" : "hover:text-apecent-surfacetint"}`}
+          class={`${scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}`}
           >{page.name}</a
         >
       </li>
