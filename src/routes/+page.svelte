@@ -2,20 +2,7 @@
   import AboutUs from "$lib/components/sections/about_us.svelte";
   import Display from "$lib/components/sections/product_display.svelte";
   import Products from "$lib/components/products.svelte";
-	import Navbar from "$lib/components/navbar.svelte"
-
-  import { onMount } from "svelte";
-
-  let scrollY = $state(0);
-
-  function handleScroll() {
-    scrollY = window.scrollY;
-  }
 </script>
-
-<svelte:window on:scroll={handleScroll} />
-
-<Navbar {scrollY} />
 
 <div class="font-poppins text-gray-100 overflow-hidden">
   <!--  INFO: make sure padding/width of this matches the navbar -->
