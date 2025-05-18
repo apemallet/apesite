@@ -52,7 +52,7 @@
         <button
           onclick={() => menuOpen = !menuOpen}
           aria-label="Menu"
-          class={`${scrollY > 50 ? "text-[#25373a] hover:text-[#445f63]" : "sm:py-4 text-[#25373a] sm:text-[#d6ad3b]"}`}
+          class={`text-[#25373a] hover:text-[#445f63] cursor-pointer`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +69,7 @@
         </button>
       
         {#if menuOpen}
-          <ul class="fixed top-15 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
+          <ul class="fixed top-28 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
             {#each pages as page}
               <li class="border-b last:border-none">
                 <a href={page.href} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
