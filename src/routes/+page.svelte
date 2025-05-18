@@ -1,6 +1,5 @@
 <script>
   import Display from "$lib/components/sections/product_carousel/index.svelte";
-  import Products from "$lib/components/sections/products.svelte";
   import AboutUs from "$lib/components/sections/about_us.svelte";
   import Main from "$lib/components/sections/main.svelte";
 	import Divider from "$lib/components/divider.svelte";
@@ -27,21 +26,14 @@
 		<Divider />
 	</div>
 
-	<!-- INFO: product overview -->
-  <div
-    class="mx-auto py-4 flex self-center justify-center"
-  >
-    <section id="products">
-			<Products />
-    </section>
-  </div>
-
 	<!-- INFO: about -->
-  <div class="mx-auto py-4 self-center bg-gray-100 flex justify-center">
-    <section id="about-us">
-			<AboutUs />
-    </section>
-  </div>
+	<div class="bg-apeium-700">
+		<div class="mx-auto py-4 self-center flex justify-center">
+			<section id="about-us">
+				<AboutUs />
+			</section>
+		</div>
+	</div>
 
 	<!-- INFO: contact -->
   <section id="contact">

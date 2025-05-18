@@ -1,7 +1,10 @@
 <script>
+	import { fade } from "svelte/transition";
   import { onMount } from "svelte";
+
   import KeenSlider from "keen-slider";
   import ProductSlide from "./product_slide.svelte";
+	import AllProducts from "./all_products.svelte";
 
   let sliderRef;
   let slider;
@@ -75,6 +78,12 @@
   function moveToIdx(idx) {
     if (slider) slider.moveToIdx(idx);
   }
+
+	let showAllProducts = $state(false);
+
+	function toggleAllProducts() {
+		showAllProducts = !showAllProducts;
+	}
 </script>
 
 <div class="w-full relative">
@@ -125,6 +134,28 @@
         <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
       </svg>
     </button>
+
+    <button
+      onclick={toggleAllProducts}
+      aria-label="Next slide"
+    >
+      <svg
+        class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      </svg>
+    </button>
   {/if}
 </div>
 
+{#if showAllProducts}
+	<div
+		class="pt-16"
+		transition:fade
+	>
+		<AllProducts />
+	</div>
+{/if}
