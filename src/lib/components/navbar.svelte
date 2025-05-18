@@ -24,7 +24,7 @@
   }
 
   let pages = [
-    { name: "HOME", href: "#display" },
+    { name: "HOME", href: "#products" },
     { name: "PRODUCTS", href: "#products" },
     { name: "ABOUT", href: "#about-us" },
     { name: "CONTACT US", href: "#contact" },
@@ -33,8 +33,8 @@
 
 <nav
   class={`fixed z-10 top-0 left-0 w-full
-    ${scrollY > 50 
-      ? "bg-[#d6ad3b] text-[#25373a] shadow-md sm:transition-all sm:ease-out sm:py-1" 
+    ${scrollY > 50
+      ? "bg-[#d6ad3b] text-[#25373a] shadow-md sm:transition-all sm:ease-out sm:py-1"
       : "bg-[#d6ad3b] text-[#25373a] sm:bg-transparent sm:py-4 sm:text-[#d6ad3b] sm:transition-all sm:ease-out"
     }`}
 >
@@ -61,13 +61,13 @@
             class="w-6 h-6"
           >
             <path
-              d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z 
-              M22.75,10.375H2c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z 
+              d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z
+              M22.75,10.375H2c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z
               M22.75,18.875H2c-1.104,0-2,0.896-2,2s0.896,2,2,2h20.75c1.104,0,2-0.896,2-2S23.855,18.875,22.75,18.875z"
             />
           </svg>
         </button>
-      
+
         {#if menuOpen}
           <ul class="fixed top-20 left-0 w-screen bg-[#d6ad3b] text-[#25373a] z-50 overflow-auto p-6 space-y-4">
             {#each pages as page}

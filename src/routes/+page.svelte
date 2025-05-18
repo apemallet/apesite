@@ -19,7 +19,7 @@
 		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-20 brightness-50 contrast-150"></div>
 		<Divider />
 		<div class="max-w-7xl mx-auto py-24 self-center">
-			<section id="display">
+			<section id="products">
 				<Display />
 			</section>
 		</div>
