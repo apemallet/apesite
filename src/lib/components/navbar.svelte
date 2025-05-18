@@ -10,9 +10,9 @@
   class={`fixed z-10 top-0 left-0 w-full transition-all ease-out
   ${scrollY > 50 ? "bg-yellow-400 text-slate-800 shadow-md py-1 " : "bg-transparent py-4 text-yellow-400"}`}
 >
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+  <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center">
     <span class="flex justify-center align-center gap-3">
-      <div class="w-20">
+      <div class="w-16">
         <Icon gray={scrollY > 50}/>
       </div>
       <div class="grid place-items-center">
