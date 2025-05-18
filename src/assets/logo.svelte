@@ -2,7 +2,7 @@
   let { gray } = $props();
 </script>
 
-<div class:grayscale-100={gray}>
+<div class:sm:grayscale-100={gray}>
   <svg width="100%" height="100%" viewBox="0 0 1080 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
       <style>
         #overlay { mix-blend-mode: multiply; }

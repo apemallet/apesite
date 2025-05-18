@@ -1,9 +1,10 @@
 <script>
   import Display from "$lib/components/sections/product_carousel/index.svelte";
   import AboutUs from "$lib/components/sections/about_us.svelte";
-	import Contact from "$lib/components/sections/contact.svelte";
+  import Founders from "$lib/components/sections/founders.svelte";
+  import Contact from "$lib/components/sections/contact.svelte";
   import Main from "$lib/components/sections/main.svelte";
-	import Divider from "$lib/components/divider.svelte";
+  import Divider from "$lib/components/divider.svelte";
 </script>
 
 <div class="font-poppins overflow-hidden">
