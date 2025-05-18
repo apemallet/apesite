@@ -26,13 +26,13 @@
     },
     {
       name: "Product 2",
-      image: "/favicon.png",
+      image: "/suchAGoodApePhoto.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
     {
       name: "Product 3",
-      image: "/favicon.png",
+      image: "/suchAGoodApePhoto.png",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
