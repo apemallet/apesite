@@ -5,9 +5,14 @@
 
   import Footer from "$lib/components/footer.svelte";
 	import Navbar from "$lib/components/navbar.svelte"
+    import { onMount } from 'svelte';
 
   let { children } = $props();
   let scrollY = $state(0);
+
+  onMount(() => {
+    scrollY = window.scrollY;
+  });
 </script>
 
 <svelte:window on:scroll={scrollY = window.scrollY} />
