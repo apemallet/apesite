@@ -20,12 +20,9 @@
 	<div class="relative bg-apeium-surface text-gray-100">
 		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-20 brightness-50 contrast-150"></div>
 		<Divider />
-		<div class="max-w-7xl mx-auto py-24 self-center">
 			<section id="products">
-				<Display />
+        <Display />
 			</section>
-		</div>
-		<Divider />
 	</div>
 
 	<!-- INFO: about -->
