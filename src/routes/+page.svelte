@@ -18,13 +18,13 @@
 
 	<!-- INFO: product carousel -->
 	<section id="products" class="relative bg-apeium-surface text-gray-100">
-		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-20 brightness-50 contrast-150"></div>
+		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-40 brightness-40 contrast-150"></div>
     <Divider />
     <Display />
 	</section>
 
 	<!-- INFO: about -->
-	<section id="about-us" class="bg-apeium-surface text-gray-100">
+	<section id="about-us" class="bg-apeium-surfacetint text-gray-100">
 		<div class="mx-auto py-4 self-center flex justify-center">
 			<AboutUs />
 		</div>

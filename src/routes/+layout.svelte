@@ -15,7 +15,7 @@
   });
 </script>
 
-<svelte:window on:scroll={scrollY = window.scrollY} />
+<svelte:window onscroll={scrollY = window.scrollY} />
 
 <div class="flex flex-col min-h-[100vh]">
   <main class="flex-1">
