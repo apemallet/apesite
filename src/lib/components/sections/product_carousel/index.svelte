@@ -154,7 +154,7 @@
 
 <div class="relative">
   <button id="ribbonButton" class="absolute right-4 md:right-32 md:flex cursor-pointer opacity-50
-    hover:opacity-100 h-8 hover:h-14"
+    hover:opacity-100 h-10 hover:h-14"
     onclick={toggleAllProducts}
   >
     <div class="grid place-items-center">
