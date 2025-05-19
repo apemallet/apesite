@@ -72,16 +72,14 @@
       <div class="w-16">
         <Icon gray={scrollY > 50} />
       </div>
-      <div class="grid place-items-center">
-        <div class="text-4xl font-[Baloo] text-center">{title}</div>
-      </div>
+			<div class="self-center text-4xl font-[Baloo] text-center hidden md:block">{title}</div>
     </span>
     <ul class="flex font-poppins font-bold space-x-6 text-l">
       <li class="block sm:hidden relative" use:clickOutside>
         <button
           onclick={() => (menuOpen = !menuOpen)}
           aria-label="Menu"
-          class={`text-[#25373a] hover:text-[#445f63] cursor-pointer`}
+          class="text-[#25373a] hover:text-[#445f63] cursor-pointer"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +113,7 @@
       {#each pages as page}
 				<li class="hidden sm:block">
 					<button onclick={() => scrollToSection(page.href)}
-						class={`${scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}`}
+						class="cursor-pointer {scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}"
 					>
 						{page.name}
 					</button>
