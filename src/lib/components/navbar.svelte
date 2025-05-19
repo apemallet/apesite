@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Icon from "$assets/logo.svelte";
-  import { slide, fade } from "svelte/transition";
+  import { slide } from "svelte/transition";
 
   let { scrollY }: { scrollY: number } = $props();
   const title = "apemallet";
@@ -10,7 +10,12 @@
 	let navBarElement: HTMLElement;
 	let navBarHeight = $state(0);
 
-  let pages = [
+	type Page	= {
+		name: string
+		href: string
+	};
+
+  let pages : Page[] = [
     { name: "HOME", href: "home" },
     { name: "PRODUCTS", href: "products" },
     { name: "ABOUT", href: "about-us" },
@@ -44,7 +49,7 @@
     };
   }
 
-	function scrollToSection(id) {
+	function scrollToSection(id: string) {
 		const element = document.getElementById(id);
 		if (element) {
 			const y = element.getBoundingClientRect().top + window.scrollY - navBarHeight;
@@ -112,9 +117,9 @@
       {#each pages as page}
 				<li class="hidden sm:block">
 					<button onclick={() => scrollToSection(page.href)}
-						href={page.href}
 						class={`${scrollY > 50 ? "hover:text-apeium-surface" : "hover:text-apecent-surfacetint"}`}
-						>{page.name}
+					>
+						{page.name}
 					</button>
 				</li>
       {/each}
