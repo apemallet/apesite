@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
   import { slide } from "svelte/transition";
+	import { products } from './product_list';
   import { onMount } from "svelte";
 
   import KeenSlider from "keen-slider";
@@ -7,6 +8,7 @@
 	import AllProducts from "./all_products.svelte";
   import HangRibbon from "$lib/components/hangRibbon.svelte";
   import Divider from "$lib/components/divider.svelte";
+
 
   let sliderRef;
   let slider;
@@ -21,27 +23,6 @@
       ? [...Array(slider.track.details.slides.length).keys()]
       : []
   );
-
-  let products = [
-    {
-      name: "Long",
-      image: "/long_icon.webp",
-      description:
-        "A free universal remote app with slick animations and custom theming",
-    },
-    {
-      name: "Product 2",
-      image: "/suchAGoodApePhoto.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      name: "Product 3",
-      image: "/suchAGoodApePhoto.png",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
 
   onMount(() => {
     slider = new KeenSlider(sliderRef, {
@@ -86,6 +67,9 @@
   function toggleAllProducts() {
     showAllProducts = !showAllProducts;
   }
+
+  import { spring } from 'svelte/motion';
+  const viaPos = spring(50);
 </script>
 
 <div class="max-w-7xl mx-auto py-24 self-center">
@@ -107,7 +91,6 @@
     {#if sliderLoaded}
       <button
         onclick={prev}
-        onkeydown={(e) => handleKeydown(e, prev)}
         aria-label="Previous slide"
         class="absolute top-1/1 left-4/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
       >
@@ -124,7 +107,6 @@
       </button>
       <button
         onclick={next}
-        onkeydown={(e) => handleKeydown(e, next)}
         aria-label="Next slide"
         class="absolute top-1/1 left-5/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
       >
@@ -150,11 +132,13 @@
   {/if}
 </div>
 
-<Divider/>
+<Divider viaPosition={$viaPos}/>
 
 <div class="relative">
   <button id="ribbonButton" class="absolute right-4 md:right-32 md:flex cursor-pointer opacity-50
     hover:opacity-100 h-10 hover:h-14"
+		onmouseenter={() => viaPos.set(90)}
+		onmouseleave={() => viaPos.set(50)}
     onclick={toggleAllProducts}
   >
     <div class="grid place-items-center">
