@@ -1,7 +1,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Icon from "$assets/logo.svelte";
   import { slide } from "svelte/transition";
+
+  import Icon from "$assets/logo.svelte";
 
   let { scrollY }: { scrollY: number } = $props();
   const title = "apemallet";
