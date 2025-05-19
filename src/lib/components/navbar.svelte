@@ -138,7 +138,10 @@
             {#each pages as page}
               <li class="border-b last:border-none">
                 <button
-                  onclick={() => scrollToSection(page.href)}
+                  onclick={() => {
+										scrollToSection(page.href)
+										menuOpen = false;
+									}}
                   class="block text-xl px-4 py-2 hover:bg-gray-100 rounded"
                 >
                   {page.name}
