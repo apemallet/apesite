@@ -25,6 +25,6 @@
   <img
     src={base + product.image}
     alt={product.name}
-    class="rounded-4xl size-80"
+    class="rounded-4xl aspect-square"
   />
 </div>
