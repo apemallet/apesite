@@ -1,5 +1,5 @@
 <script>
-  import { slide, fade } from "svelte/transition";
+  import { slide } from "svelte/transition";
   import { onMount } from "svelte";
 
   import KeenSlider from "keen-slider";
@@ -137,27 +137,13 @@
           <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
         </svg>
       </button>
-
-      <button
-        onclick={toggleAllProducts}
-        aria-label="Next slide"
-      >
-        <svg
-          class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
-        </svg>
-      </button>
     {/if}
   </div>
 
   {#if showAllProducts}
     <div
       class="pt-16"
-      transition:fade
+      transition:slide
     >
       <AllProducts />
     </div>
@@ -173,7 +159,13 @@
   >
     <HangRibbon/>
     <div class="grid place-items-center">
-      <p class="text-apecent-surfacetint text-nowrap">See more</p>
+      <p class="text-apecent-surfacetint text-nowrap">
+        {#if !showAllProducts}
+          See more
+        {:else}
+          See less
+        {/if}
+      </p>
     </div>
   </button>
 </div>
