@@ -10,19 +10,12 @@
   import Divider from "$lib/components/divider.svelte";
 
 
-  let sliderRef;
+  let sliderRef: HTMLElement;
+  let currentSlide = 0;
   let slider;
-  let current = 0;
 
   // Once the slider is loaded, transition it in
   let sliderLoaded = $state(false);
-
-  // Computed property for dot navigation
-  let dotHelper = $derived(
-    slider && slider.track
-      ? [...Array(slider.track.details.slides.length).keys()]
-      : []
-  );
 
   onMount(() => {
     slider = new KeenSlider(sliderRef, {
@@ -32,12 +25,12 @@
         spacing: 20,
       },
       detailsChanged: (s) => {
-        s.slides.forEach((element, idx) => {
+        s.slides.forEach((element: HTMLElement, idx: number) => {
           element.style.opacity = s.track.details.slides[idx].portion;
         });
       },
       slideChanged: (s) => {
-        current = s.track.details.rel;
+        currentSlide = s.track.details.rel;
       },
       defaultAnimation: {
         duration: 600,
@@ -58,16 +51,13 @@
     if (slider) slider.next();
   }
 
-  function moveToIdx(idx) {
-    if (slider) slider.moveToIdx(idx);
-  }
-
   let showAllProducts = $state(false);
 
   function toggleAllProducts() {
     showAllProducts = !showAllProducts;
   }
 
+	// TODO: Change to svelte5 Spring since this is svelte4 deprecated
   import { spring } from 'svelte/motion';
   const viaPos = spring(50);
 </script>
