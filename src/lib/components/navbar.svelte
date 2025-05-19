@@ -53,8 +53,6 @@
 		const element = document.getElementById(id);
 		if (element) {
 			const y = element.getBoundingClientRect().top + window.scrollY - navBarHeight;
-			console.log(`top: ${y}`);
-			console.log(`NAVBAR HEIHGT: ${navBarHeight}`)
 			window.scrollTo({top: y, behavior: 'smooth'});
 		}
 	}
