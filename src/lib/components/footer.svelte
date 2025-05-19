@@ -4,7 +4,7 @@
 			&copy; Apemallet Limited {new Date().getFullYear()}
 		</div>
 		<div class="flex justify-center text-xs space-x-6 2xs:order-2">
-			<div class="bg-apeium-surfacetintier rounded-full px-4">&#x1F34C;</div>
+			<div class="bg-apeium-surfacetintier rounded-full px-4 sm:py-0 py-1">&#x1F34C;</div>
 		</div>
 	</div>
 </footer>
