@@ -10,6 +10,7 @@
   let menuOpen = $state(false);
   let navBarElement: HTMLElement;
   let navBarHeight = $state(0);
+	let transitionInProgress = $state(false);
 
   type Page = {
     name: string;
@@ -26,12 +27,27 @@
   onMount(() => {
     navBarHeight = navBarElement.offsetHeight;
 
-    const resizeObserver = new ResizeObserver(() => {
-      navBarHeight = navBarElement.offsetHeight;
+    const updateNavbarHeight = () => {
+      const newHeight = navBarElement.offsetHeight;
+      navBarHeight = newHeight;
+      transitionInProgress = false;
+    };
+
+		// when mutatio is detected, assume this is a transition
+    const mutationObserver = new MutationObserver(() => {
+      transitionInProgress = true;
     });
 
-    resizeObserver.observe(navBarElement);
-    return () => resizeObserver.disconnect();
+		// update navbar height when transition ends
+    navBarElement.addEventListener('transitionend', updateNavbarHeight);
+    mutationObserver.observe(navBarElement, {
+      attributes: true,
+    });
+
+    return () => {
+      mutationObserver.disconnect();
+      navBarElement.removeEventListener('transitionend', updateNavbarHeight);
+    };
   });
 
   function clickOutside(node: HTMLElement) {
@@ -50,12 +66,29 @@
     };
   }
 
-  function scrollToSection(id: string) {
+  async function scrollToSection(id: string) {
     const element = document.getElementById(id);
-    if (element) {
-      const y =
-        element.getBoundingClientRect().top + window.scrollY - navBarHeight;
+    if (!element) return;
+
+    const calculateOffset = () => {
+      const y = element.getBoundingClientRect().top + window.scrollY - navBarHeight;
       window.scrollTo({ top: y, behavior: "smooth" });
+    };
+
+    calculateOffset();
+
+		// recalculate if a transition happened since beginning
+		await new Promise(_ => setTimeout(_, 50));
+    if (transitionInProgress) {
+      await new Promise(resolve => {
+        const checkTransition = setInterval(() => {
+          if (!transitionInProgress) {
+            clearInterval(checkTransition);
+            calculateOffset();
+            resolve(true);
+          }
+        }, 25);
+      });
     }
   }
 </script>
