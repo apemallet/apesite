@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
   import Icon from "$assets/logo.svelte";
   import { slide } from "svelte/transition";
 
@@ -7,15 +7,15 @@
   const title = "apemallet";
 
   let menuOpen = $state(false);
-	let navBarElement: HTMLElement;
-	let navBarHeight = $state(0);
+  let navBarElement: HTMLElement;
+  let navBarHeight = $state(0);
 
-	type Page	= {
-		name: string
-		href: string
-	};
+  type Page = {
+    name: string;
+    href: string;
+  };
 
-  let pages : Page[] = [
+  let pages: Page[] = [
     { name: "HOME", href: "home" },
     { name: "PRODUCTS", href: "products" },
     { name: "ABOUT", href: "about-us" },
@@ -49,13 +49,14 @@
     };
   }
 
-	function scrollToSection(id: string) {
-		const element = document.getElementById(id);
-		if (element) {
-			const y = element.getBoundingClientRect().top + window.scrollY - navBarHeight;
-			window.scrollTo({top: y, behavior: 'smooth'});
-		}
-	}
+  function scrollToSection(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      const y =
+        element.getBoundingClientRect().top + window.scrollY - navBarHeight;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
 </script>
 
 <nav
@@ -102,7 +103,10 @@
           >
             {#each pages as page}
               <li class="border-b last:border-none">
-                <button onclick={() => scrollToSection(page.href)} class="block text-xl px-4 py-2 hover:bg-gray-100 rounded">
+                <button
+                  onclick={() => scrollToSection(page.href)}
+                  class="block text-xl px-4 py-2 hover:bg-gray-100 rounded"
+                >
                   {page.name}
                 </button>
               </li>
