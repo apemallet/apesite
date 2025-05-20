@@ -44,6 +44,17 @@
       attributes: true,
     });
 
+		// smooth scroll if teleported from another page to ## endpoint
+    if (window.location.hash) {
+			let prefixLen = 0;
+			if (window.location.hash.substring(0, 2) == "##") prefixLen = 2
+			if (window.location.hash.substring(0, 4) == "#%23") prefixLen = 4
+			if (prefixLen == 0) return
+
+      const id = window.location.hash.substring(prefixLen);
+      setTimeout(() => scrollToSection(id), 200);
+    }
+
     return () => {
       mutationObserver.disconnect();
       navBarElement.removeEventListener('transitionend', updateNavbarHeight);
@@ -70,10 +81,8 @@
 		// if not on home page tp to it
     const currentPath = window.location.pathname;
     const isHomePage = currentPath === "/" || currentPath === "";
-    if (!isHomePage) {
-      window.location.href = `/#${id}`;
-      return;
-    }
+		// NOTE: ## means to smooth scroll, single # means TP
+    if (!isHomePage) window.location.href = `/##${id}`;
 
     const element = document.getElementById(id);
     if (!element) return;
