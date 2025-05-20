@@ -10,7 +10,7 @@
 <div class="font-poppins overflow-hidden">
 	<!-- INFO: main "APEMALLET" section -->
 	<section id="home" class="relative bg-gradient-to-tl from-apeium-surface via-apeium-surfacetint to-apeium-surfacetintier">
-		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-10 brightness-100 contrast-150"></div>
+		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-10 brightness-100 contrast-150 pointer-events-none"></div>
 		<div class="max-w-7xl mx-auto">
 			<Main />
 		</div>
@@ -18,7 +18,7 @@
 
 	<!-- INFO: product carousel -->
 	<section id="products" class="relative bg-apeium-surface text-gray-100">
-		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-40 brightness-40 contrast-150"></div>
+		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-40 brightness-40 contrast-150 pointer-events-none"></div>
     <Divider />
     <Display />
 	</section>
