@@ -3,6 +3,7 @@
 	import { products } from './product_list';
   import { onMount } from "svelte";
 
+	import { type KeenSliderInstance } from "keen-slider";
   import KeenSlider from "keen-slider";
   import ProductSlide from "./product_slide.svelte";
 	import AllProducts from "./all_products.svelte";
@@ -10,12 +11,10 @@
   import Divider from "$lib/components/divider.svelte";
 
 
+  let sliderLoaded = $state(false);
+  let slider: KeenSliderInstance;
   let sliderRef: HTMLElement;
   let currentSlide = 0;
-  let slider;
-
-  // Once the slider is loaded, transition it in
-  let sliderLoaded = $state(false);
 
   onMount(() => {
     slider = new KeenSlider(sliderRef, {
@@ -26,7 +25,7 @@
       },
       detailsChanged: (s) => {
         s.slides.forEach((element: HTMLElement, idx: number) => {
-          element.style.opacity = s.track.details.slides[idx].portion;
+          element.style.opacity = s.track.details.slides[idx].portion.toString();
         });
       },
       slideChanged: (s) => {
