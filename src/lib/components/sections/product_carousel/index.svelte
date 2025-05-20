@@ -124,12 +124,13 @@
 <Divider viaPosition={$viaPos}/>
 
 <div class="relative">
-  <button id="ribbonButton" class="absolute right-4 md:right-32 md:flex cursor-pointer h-10 hover:h-14"
+  <button id="ribbonButton" class="absolute right-4 md:right-32 md:flex cursor-pointer"
 		onmouseenter={() => viaPos.set(90)}
 		onmouseleave={() => viaPos.set(50)}
     onfocus={() => viaPos.set(90)}
     onblur={() => viaPos.set(50)}
 		style:opacity="{$viaPos / 100}"
+		style:height="{($viaPos)/25}rem"
     onclick={toggleAllProducts}
   >
     <div class="grid place-items-center">
@@ -144,10 +145,3 @@
     <HangRibbon/>
   </button>
 </div>
-
-<style lang="postcss">
-  #ribbonButton {
-    transition-property: height;
-    transition-duration: 300ms;
-  }
-</style>
