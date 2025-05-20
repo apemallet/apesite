@@ -1,13 +1,6 @@
 <script>
   import { base } from "$app/paths";
-  let products = [
-    {
-      name: "Long",
-      image: "/long_icon.webp",
-      description:
-        "A free universal remote app with slick animations and custom theming. A free universal remote app with slick animations and custom theming.",
-    },
-  ];
+	import { products } from './product_list.ts';
 </script>
 
 <div
