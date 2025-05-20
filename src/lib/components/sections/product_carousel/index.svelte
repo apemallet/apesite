@@ -70,7 +70,7 @@
     {/if}
 
     <div bind:this={sliderRef} class="keen-slider overflow-visible! pb-15">
-      {#each products as product}
+      {#each products.slice(0,3) as product}
         <div class="keen-slider__slide opacity-0">
           <ProductSlide {product} />
         </div>

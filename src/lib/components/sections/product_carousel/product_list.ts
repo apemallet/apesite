@@ -23,4 +23,16 @@ export const products: Product[] = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
+  {
+    name: "Product 4",
+    image: "/suchAGoodApePhoto.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Product 5",
+    image: "/suchAGoodApePhoto.png",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
 ];
