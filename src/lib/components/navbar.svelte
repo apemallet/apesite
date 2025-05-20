@@ -67,6 +67,14 @@
   }
 
   async function scrollToSection(id: string) {
+		// if not on home page tp to it
+    const currentPath = window.location.pathname;
+    const isHomePage = currentPath === "/" || currentPath === "";
+    if (!isHomePage) {
+      window.location.href = `/#${id}`;
+      return;
+    }
+
     const element = document.getElementById(id);
     if (!element) return;
 

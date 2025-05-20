@@ -13,6 +13,9 @@
     </p>
     <button
       class="group bg-white rounded-full p-4 hover:bg-black active:bg-black active:scale-90 transition-all cursor-pointer max-w-md"
+			onclick={() => {
+				window.open(base + product.href, "_self");
+			}}
     >
       <span
         class="text-black group-hover:text-white group-active:text-white ease-in transition-all"
