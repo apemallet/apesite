@@ -3,7 +3,7 @@
   import About from "$lib/sections/root/about.svelte";
   import Founders from "$lib/sections/root/founders.svelte";
   import Contact from "$lib/sections/root/contact.svelte";
-  import Main from "$lib/sections/root/main.svelte";
+  import Landing from "$lib/sections/root/landing.svelte";
   import Divider from "$lib/components/divider.svelte";
 </script>
 
@@ -12,7 +12,7 @@
 	<section id="home" class="relative bg-gradient-to-tl from-apeium-surface via-apeium-surfacetint to-apeium-surfacetintier">
 		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-10 brightness-100 contrast-150 pointer-events-none"></div>
 		<div class="max-w-7xl mx-auto">
-			<Main />
+			<Landing />
 		</div>
 	</section>
 
