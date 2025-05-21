@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
 	import { type Product } from "./product_list";
-  let { product } : {product: Product} = $props();
+  let { product, buttonDisabled = false } : {product: Product, buttonDisabled?: boolean} = $props();
 </script>
 
 <div
@@ -14,6 +14,7 @@
     </p>
     <button
       class="group bg-white rounded-full p-4 hover:bg-black active:bg-black active:scale-90 transition-all cursor-pointer max-w-md"
+			disabled={buttonDisabled}
 			onclick={() => {
 				window.open(base + product.href, "_self");
 			}}

@@ -8,8 +8,8 @@
 
   let sliderLoaded = $state(false);
   let slider: KeenSliderInstance;
+  let currentSlide = $state(0);
   let sliderRef: HTMLElement;
-  let currentSlide = 0;
 
   onMount(() => {
     slider = new KeenSlider(sliderRef, {
@@ -47,22 +47,23 @@
 </script>
 
 <div class="w-full relative">
-	<!-- Until slider is loaded, just show the first product -->
+	<!-- until slider is loaded, just show the first product -->
 	{#if !sliderLoaded}
 		<CarouselCard product={products[0]} />
 	{/if}
 
 	<div bind:this={sliderRef} class="keen-slider overflow-visible! pb-15">
-		{#each products.slice(0,3) as product}
+		{#each products.slice(0,3) as product, idx}
 				<div class="keen-slider__slide opacity-0">
 					{#if sliderLoaded}
-						<CarouselCard {product} />
+						<!-- disable buttons so it can't be screen-read if not current slide -->
+						<CarouselCard {product} buttonDisabled={currentSlide != idx} />
 					{/if}
 				</div>
 		{/each}
 	</div>
 
-	<!-- Navigation Arrows -->
+	<!-- navigation Arrows -->
 	{#if sliderLoaded}
 		<button
 			onclick={prev}
