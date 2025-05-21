@@ -1,9 +1,9 @@
 <script>
-  import Display from "$lib/components/sections/product_carousel/index.svelte";
-  import AboutUs from "$lib/components/sections/about_us.svelte";
-  import Founders from "$lib/components/sections/founders.svelte";
-  import Contact from "$lib/components/sections/contact.svelte";
-  import Main from "$lib/components/sections/main.svelte";
+  import ProductCarousel from "$lib/pages/root/product_showcase/index.svelte";
+  import About from "$lib/pages/root/about.svelte";
+  import Founders from "$lib/pages/root/founders.svelte";
+  import Contact from "$lib/pages/root/contact.svelte";
+  import Main from "$lib/pages/root/main.svelte";
   import Divider from "$lib/components/divider.svelte";
 </script>
 
@@ -20,13 +20,14 @@
 	<section id="products" class="relative bg-apeium-surface text-gray-100">
 		<div class="absolute inset-0 bg-[url(/svg/grain.svg)] opacity-40 brightness-40 contrast-150 pointer-events-none"></div>
     <Divider />
-    <Display />
+    <ProductCarousel />
 	</section>
 
 	<!-- INFO: about -->
 	<section id="about-us" class="bg-apeium-surfacetint text-gray-100">
-		<div class="mx-auto py-4 self-center flex justify-center">
-			<AboutUs />
+		<div class="mx-auto py-4 self-center items-center flex flex-col">
+			<About />
+			<Founders />
 		</div>
 	</section>
 

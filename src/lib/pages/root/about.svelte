@@ -1,5 +1,5 @@
 <script>
-    import Divider from "../divider.svelte";
+    import Divider from "$lib/components/divider.svelte";
 </script>
 
 <div class="text-center min-h-50 max-w-7xl py-5">

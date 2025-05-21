@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   name: string;
   image: string;
   href: string;
@@ -14,7 +14,7 @@ export const products: Product[] = [
     href: "long",
   },
   {
-    name: "Product 2",
+    name: "Ape",
     image: "/suchAGoodApePhoto.png",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

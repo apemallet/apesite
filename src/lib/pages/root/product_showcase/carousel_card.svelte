@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
   import { base } from "$app/paths";
-  let { product } = $props();
+	import { type Product } from "./product_list";
+  let { product } : {product: Product} = $props();
 </script>
 
 <div
