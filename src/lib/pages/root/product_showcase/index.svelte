@@ -6,15 +6,15 @@
   import Divider from "$lib/components/divider.svelte";
 	import ExpandedView from "./expanded_view.svelte";
 
+	// Used for animating the ribbon height/opacity and the gradient viaPosition
+  import { Spring } from 'svelte/motion';
+  const spring = new Spring(50, {
+			stiffness: 0.2,
+			damping: 0.25
+		});
+
   let showAllProducts = $state(false);
-
-  function toggleAllProducts() {
-    showAllProducts = !showAllProducts;
-  }
-
-	// TODO: Change to svelte5 Spring since this is svelte4 deprecated
-  import { spring } from 'svelte/motion';
-  const viaPos = spring(50);
+	const toggleAllProducts = () => showAllProducts = !showAllProducts;
 </script>
 
 <div class="max-w-7xl mx-auto py-24 self-center">
@@ -30,16 +30,16 @@
   {/if}
 </div>
 
-<Divider viaPosition={$viaPos}/>
+<Divider viaPosition={spring.current}/>
 
 <div class="relative">
   <button id="ribbonButton" class="absolute right-4 md:right-32 md:flex cursor-pointer"
-		onmouseenter={() => viaPos.set(90)}
-		onmouseleave={() => viaPos.set(50)}
-    onfocus={() => viaPos.set(90)}
-    onblur={() => viaPos.set(50)}
-		style:opacity="{$viaPos / 100}"
-		style:height="{($viaPos)/25}rem"
+		onmouseenter={() => spring.target = 90}
+		onmouseleave={() => spring.target = 50}
+    onfocus={() => spring.target = 90}
+    onblur={() => spring.target = 50}
+		style:opacity="{spring.current / 100}"
+		style:height="{(spring.current)/25}rem"
     onclick={toggleAllProducts}
   >
     <div class="grid place-items-center">
