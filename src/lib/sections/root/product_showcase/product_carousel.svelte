@@ -3,7 +3,7 @@
   import { onMount } from "svelte";
 
 	import { type KeenSliderInstance } from "keen-slider";
-  import ProductSlide from "./carousel_card.svelte";
+  import CarouselCard from "./carousel_card.svelte";
   import KeenSlider from "keen-slider";
 
   let sliderLoaded = $state(false);
@@ -49,14 +49,14 @@
 <div class="w-full relative">
 	<!-- Until slider is loaded, just show the first product -->
 	{#if !sliderLoaded}
-		<ProductSlide product={products[0]} />
+		<CarouselCard product={products[0]} />
 	{/if}
 
 	<div bind:this={sliderRef} class="keen-slider overflow-visible! pb-15">
 		{#each products.slice(0,3) as product}
 				<div class="keen-slider__slide opacity-0">
 					{#if sliderLoaded}
-						<ProductSlide {product} />
+						<CarouselCard {product} />
 					{/if}
 				</div>
 		{/each}
