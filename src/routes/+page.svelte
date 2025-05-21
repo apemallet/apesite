@@ -1,9 +1,9 @@
 <script>
-  import ProductCarousel from "$lib/pages/root/product_showcase/index.svelte";
-  import About from "$lib/pages/root/about.svelte";
-  import Founders from "$lib/pages/root/founders.svelte";
-  import Contact from "$lib/pages/root/contact.svelte";
-  import Main from "$lib/pages/root/main.svelte";
+  import ProductCarousel from "$lib/sections/root/product_showcase/index.svelte";
+  import About from "$lib/sections/root/about.svelte";
+  import Founders from "$lib/sections/root/founders.svelte";
+  import Contact from "$lib/sections/root/contact.svelte";
+  import Main from "$lib/sections/root/main.svelte";
   import Divider from "$lib/components/divider.svelte";
 </script>
 
