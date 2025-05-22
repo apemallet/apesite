@@ -9,18 +9,18 @@
 >
   <div class="px-10 sm:items-start flex flex-col gap-2 sm:gap-4">
     <h1 class="text-6xl font-bold text-center sm:text-left">{product.name}</h1>
-    <p class="text-xl text-gray-100 font-semibold text-center sm:text-left">
+    <p class="text-xl text-slape font-semibold text-center sm:text-left">
       {product.description}
     </p>
     <button
-      class="group bg-white rounded-full p-4 hover:bg-black active:bg-black active:scale-90 transition-all cursor-pointer max-w-md"
+      class="group bg-slape rounded-full p-4 hover:bg-apeium-surfacetintier active:bg-apeium-surfacetint active:scale-90 transition-all cursor-pointer max-w-md"
 			disabled={buttonDisabled}
 			onclick={() => {
 				window.open(base + product.href, "_self");
 			}}
     >
       <span
-        class="text-black group-hover:text-white group-active:text-white ease-in transition-all"
+        class="text-apeium-surface group-hover:text-slape group-active:text-slape ease-in transition-all"
       >
         Learn more
       </span>

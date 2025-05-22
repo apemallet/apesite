@@ -2,9 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-	--color-apecent-surface: oklch(0.85 0.1658 91.936);
-	--color-apecent-surfacetint: oklch(0.88 0.177 91.936);
-
 	/* --color-apecent-50: oklch(0.987 0.026 102.212);  */
 	/* --color-apecent-100: oklch(0.973 0.071 103.193); */
 	/* --color-apecent-200: oklch(0.945 0.129 101.54);  */
@@ -16,9 +13,17 @@
 	/* --color-apecent-900: oklch(0.421 0.095 57.708);  */
 	/* --color-apecent-950: oklch(0.286 0.066 53.813);  */
 
+	/* Dark background ape color */
 	--color-apeium-surface: oklch(0.129 0.042 264.695);
 	--color-apeium-surfacetint: oklch(0.208 0.042 265.755);
 	--color-apeium-surfacetintier: oklch(0.279 0.041 260.031);
+
+	/* Yellow ape accent color set */
+	--color-apecent-surface: oklch(0.85 0.1658 91.936);
+	--color-apecent-surfacetint: oklch(0.88 0.177 91.936);
+
+	/* White ape neutral color set */
+	--color-slape: oklch(96.7% 0.003 264.542)
 
 	/* --color-apeium-50: oklch(0.984 0.003 247.858);  */
 	/* --color-apeium-100: oklch(0.968 0.007 247.896); */
