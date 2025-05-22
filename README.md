@@ -1,28 +1,26 @@
-# sv
+# apemallet
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**Nothing but monkey business**
 
-## Creating a project
+## About Us
 
-If you're seeing this, you've probably already done this step. Congrats!
+Apemallet is a creative software company with a user-first philosophy at its core. We design advanced systems that feel effortless, blending sophisticated algorithms with playful, intuitive interfaces. Whether it’s scheduling software or a mobile app, we turn everyday tools into engaging, accessible experiences. Because we believe even the most “boring” tasks can be made fun.
 
-```bash
-# create a new project in the current directory
-npx sv create
+This repository contains the source code for the official Apemallet website.
 
-# create a new project in my-app
-npx sv create my-app
-```
+## Products
+
+<!-- Information about our products will go here -->
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've cloned the repository and installed dependencies with `bun install`, start a development server:
 
 ```bash
-npm run dev
+bun dev
 
 # or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun dev --open
 ```
 
 ## Building
@@ -30,9 +28,30 @@ npm run dev -- --open
 To create a production version of your app:
 
 ```bash
-npm run build
+bun run build
 ```
 
-You can preview the production build with `npm run preview`.
+You can preview the production build with `bun run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+
+## Linting and Formatting
+
+To lint and format the code:
+
+```bash
+bun run lint
+bun run format
+```
+
+## Checking
+
+To run Svelte check:
+
+```bash
+bun run check
+```
+
+## License
+
+Details about our licensing can be found in the LICENSE file.
