@@ -71,7 +71,7 @@
 			class="absolute top-1/1 left-4/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
 		>
 			<svg
-				class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
+				class="w-8 h-8 fill-slape hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				aria-hidden="true"
@@ -87,7 +87,7 @@
 			class="absolute top-1/1 left-5/9 -translate-y-1/2 z-2 p-1 rounded-full invisible sm:visible"
 		>
 			<svg
-				class="w-8 h-8 fill-gray-100 hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
+				class="w-8 h-8 fill-slape hover:fill-gray-300 hover:scale-120 active:scale-90 transition-all ease-in-out cursor-pointer"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				aria-hidden="true"

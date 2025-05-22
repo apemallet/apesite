@@ -159,7 +159,7 @@
 										scrollToSection(page.href)
 										menuOpen = false;
 									}}
-                  class="block text-xl px-4 py-2 hover:bg-gray-100 rounded"
+                  class="block text-xl px-4 py-2 hover:bg-slape rounded"
                 >
                   {page.name}
                 </button>
